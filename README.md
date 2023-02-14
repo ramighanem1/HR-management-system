@@ -1,26 +1,29 @@
 # HR-management-system
 
 ## Home page : 
-#### Header
+### Header
     for navigating to any other pages.
-#### Main    
-    render the information for each employee from Javascript.
+### Main    
+#### Form  
+
+    Full name
+    Department with following options:Administration,Marketing,Development,Finance
+    Level with following options:Junior,Mid-Senior,Senior
+    Image url
+
+    Submit button to generate Employee Id calculate Salary render the information  
+
+#### refactor the render prototype 
+
+    Employee Image
+    Employee Full name 
+    Employee Id
+    Department 
+    Level 
+
+
 #### Footer
     social media links with copyright.
-
-### Javascript :
-
-    constructor to generate an employee object:
-
-    Employee ID
-    Full Name
-    Department:Administration,Marketing,Development,Finance
-    Level:,Junior,Mid-Senior,Senior
-    Image URL
-    Salary
-
-    calculate Salary Function
-    render  Function
 
 ## Accounting page :
 #### Header

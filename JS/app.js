@@ -24,29 +24,76 @@ Employee.prototype.calculateSalary = function () {
 };
 
 Employee.prototype.render = function () {
-    document.write(`*) Employee Name : ${this.FullName}  *)  Salary : ${this.Salary} <br>`);
+    let divStile = document.getElementById('employee-container');
+
+    const divEl = document.createElement('div');
+    divEl.setAttribute('class', "employee-card");
+    divStile.appendChild(divEl);
+
+
+    //display the Employee img
+    const imgEl = document.createElement('img');
+    divEl.appendChild(imgEl);
+    imgEl.setAttribute('src', this.ImageURL);
+    imgEl.setAttribute('alt', "Employee Image");
+
+    //display Name and Id 
+    const nameIdEl = document.createElement('p');
+    divEl.appendChild(nameIdEl);
+    nameIdEl.textContent = `Name: ${this.FullName}`;
+
+    const nameIdE2 = document.createElement('p');
+    divEl.appendChild(nameIdE2);
+    nameIdE2.textContent = `Id: ${this.EmployeeId}`;
+
+    //display if the drink is hot and/or cold
+    const pEl = document.createElement('p');
+    divEl.append(pEl);
+    pEl.textContent = `Department: ${this.Department}`;
+
+    const pE2 = document.createElement('p');
+    divEl.append(pE2);
+    pE2.textContent = `Level: ${this.Level}`;
+
+
 };
 
-let  employee1 = new Employee(1000, "Ghazi Samer", "Administration", "Senior", "image1.jpg", 0);
-let  employee2 = new Employee(1001, "Lana Ali", "Finance", "Senior", "./Data/image2.jpg", 0);
-let  employee3 = new Employee(1002, "Tamara Ayoub", "Marketing", "Senior", "./Data/image3.jpg", 0);
-let  employee4 = new Employee(1003, "Safi Walid", "Administration", "Mid-Senior", "./Data/image4.jpg", 0);
-let  employee5 = new Employee(1004, "Omar Zaid", "Development", "Senior", "./Data/image5.jpg", 0);
-let  employee6 = new Employee(1005, "Rana Saleh", "Development", "Junior", "./Data/image6.jpg", 0);
-let  employee7 = new Employee(1006, "Hadi Ahmad", "Finance", "Mid-Senior", "./Data/image7.jpg", 0);
 
-employee1.calculateSalary();
-employee2.calculateSalary();
-employee3.calculateSalary();
-employee4.calculateSalary();
-employee5.calculateSalary();
-employee6.calculateSalary();
-employee7.calculateSalary();
+var EmployeesIdes = new Array();
 
-employee1.render();
-employee2.render();
-employee3.render();
-employee4.render();
-employee5.render();
-employee6.render();
-employee7.render();
+function generateEmployeeId(existingEmployees) {
+    const id = Math.floor(Math.random() * 9000) + 1000;
+    if (existingEmployees.includes(id)) { // If the number is already in use, generate a new one
+        return generateEmployeeId(existingEmployees);
+    }
+    EmployeesIdes.push(id);
+    return id;
+}
+
+//Events
+
+let employeeForm = document.getElementById("employeeForm");
+employeeForm.addEventListener('submit', addNewEmployeeFormHandler);
+
+function addNewEmployeeFormHandler(event) {
+
+    event.preventDefault();
+
+    const employeeFullName = event.target.fullName.value;
+    const department = document.getElementById("department");
+    const departmentValue = department.value;
+    const level = document.getElementById("level");
+    const levelValue = level.value;
+    const employeeImageURL = event.target.imageURL.value;
+    const generatedEmployeeId = generateEmployeeId(EmployeesIdes);
+
+    let newEmployee = new Employee(generatedEmployeeId, employeeFullName, departmentValue, levelValue, employeeImageURL, 0);
+    newEmployee.calculateSalary();
+    newEmployee.render();
+
+    document.getElementById("employeeForm").reset();
+
+}
+
+
+
