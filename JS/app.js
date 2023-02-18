@@ -38,6 +38,8 @@ Employee.prototype.render = function () {
     imgEl.setAttribute('alt', "Employee Image");
 
     //display Name and Id 
+  
+
     const nameIdEl = document.createElement('p');
     divEl.appendChild(nameIdEl);
     nameIdEl.textContent = `Name: ${this.FullName}`;
@@ -54,6 +56,10 @@ Employee.prototype.render = function () {
     const pE2 = document.createElement('p');
     divEl.append(pE2);
     pE2.textContent = `Level: ${this.Level}`;
+
+    const pE3 = document.createElement('p');
+    divEl.append(pE3);
+    pE3.textContent = `Salary: ${this.Salary}`;
 
 
 };
