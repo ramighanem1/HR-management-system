@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- stylesheet -->
+    <script src="https://kit.fontawesome.com/4f7fe5e387.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./CSS/reset.css">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <!-- stylesheet -->
+    <title>Home page</title>
+</head>
+
+<body>
+    <header class="header">
+        <img src="./Data/Logo.jpg" alt="Logo">
+        <h1>HR Fusion</h1>
+        <nav>
+            <a href="./">Home</a>
+            <a href="./accounting.html">Accounting</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <form id="employeeForm">
+                <fieldset>
+                    <legend>Add New Employee</legend>
+                    <div>
+                        <label for="fullName">Full Name:</label>
+                        <input type="text" id="fullName" name="fullName">
+                    </div>
+                    <div>
+                        <label for="department">Department:</label>
+                        <select id="department" name="department">
+                            <option value="Administration">Administration</option>
+                            <option value="Marketing">Marketing</option>
+                            <option value="Development">Development</option>
+                            <option value="Finance">Finance</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="level">Level:</label>
+                        <select id="level" name="level">
+                            <option value="Junior">Junior</option>
+                            <option value="Mid-Senior">Mid-Senior</option>
+                            <option value="Senior">Senior</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="imageURL">Image URL:</label>
+                        <input type="text" id="imageURL" name="imageURL">
+                    </div>
+                    <input type="submit" value="Submit">
+
+                </fieldset>
+
+            </form>
+
+        </section>
+        <section id="Employee">
+            <dev id="employee-container">
+
+            </dev>
+           
+        </section>
+        <br>
+        <br>
+        <br>
+        <br>
+    </main>
+
+    <footer>
+        <div class="icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+
+        <p> &copy; Created by Rami Ghanem 2023 </p>
+
+    </footer>
+    <!-- import js code -->
+    <script src="./JS/app.js"></script>
+</body>
+
+</html>
