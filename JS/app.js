@@ -67,6 +67,11 @@ function render() {
         divEl.append(pE2);
         pE2.textContent = `Level: ${EmployeeArr[i].Level}`;
 
+        const pE3 = document.createElement('p');
+        divEl.append(pE3);
+        pE3.textContent = `Salary: ${EmployeeArr[i].Salary}`;
+
+
 
     }
 };
